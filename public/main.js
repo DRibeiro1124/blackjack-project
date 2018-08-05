@@ -11,6 +11,24 @@ const createDeck = () => {
       deck.push(card.concat(suit))
     })
   })
+  // 5. Shuffle deck
+  // Bruno showed me this in our search, but cant explain.
+  // deck.sort(element => Math.random() - 0.5)
+
+  let i = 0
+  let j = 0
+  let temp = null
+
+  for (i = 0; i < deck.length; i++) {
+    j = Math.floor(Math.random() * (i + 1))
+    temp = deck[i]
+    deck[i] = deck[j]
+    deck[j] = temp
+  }
+  // deck.forEach(element => {
+  //   console.log(element)
+  // })
 }
+
 
 document.addEventListener('DOMContentLoaded', createDeck)
