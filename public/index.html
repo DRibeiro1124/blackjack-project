@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blackjack Project</title>
-    <link rel="stylesheet" href="/screen.css">
-  </head>
 
-  <body>
-    <main>
-       <p id="intro">Welcome Players to Blackjack!</p>
-       <p class="dealCards">Press the "Deal" button to start a game</p>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blackjack Project</title>
+  <link rel="stylesheet" href="/screen.css">
+</head>
+
+<body>
+  <main>
+    <h1 id="intro">Welcome Players to Blackjack!</h1>
+    <section class="game-starter">
+      <p class="dealCards">Press the "Deal" button to start a game</p>
+      <button id="deal-button">DEAL</button>
+    </section>
+    <section class="main-section">
+      <section class="player">
         <section>
-          <section id="player-name">
-            <input type="text" placeholder="Please enter your name">
-            <button>Update Name</button>
-          </section>
-          <section>
-            <ol>Player 1 Cards:</ol>
-          </section>
-          <section>
-            <p>Please Select:</p>
-            <button>Hit</button>
-            <button>Stay</button>
-          </section>
+          <p>Please Select:</p>
+          <button class="hit-button">Hit</button>
+          <button>Stay</button>
         </section>
-    </main>
-    <script src="/main.js" charset="utf-8"></script>
-  </body>
+        <ul id="player-hand">
+          <li id="player-card1">Player Card 1</li>
+          <li id="player-card2">Player Card 2</li>
+        </ul>
+      </section>
+      <section class="house">
+        <ul id="dealer-hand">
+          <li>House card 2</li>
+          <li>House card 1</li>
+      </section>
+    </section>
+  </main>
+  <script src="/main.js" charset="utf-8"></script>
+</body>
+
 </html>

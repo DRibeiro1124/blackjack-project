@@ -3,6 +3,7 @@ html {
 }
 
 body {
+  background-color: green;
   margin: 0;
   min-height: 100%;
   font: 16px / 1 sans-serif;
@@ -11,4 +12,32 @@ body {
 #intro {
   display: flex;
   justify-content: center;
+}
+
+#deal-button {
+  border: solid red 0.5em;
+}
+
+.game-starter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-starter p {
+  max-width: 50%;
+}
+
+.main-section {
+  display: flex;
+  align-items: center;
+}
+
+.player {
+  width: 50%;
+}
+
+
+.house {
+  width: 50%;
 }

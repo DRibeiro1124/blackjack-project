@@ -1,4 +1,6 @@
 let deck = []
+let houseHand = []
+let playerHand = []
 
 const createDeck = () => {
   // 1. create an array with suits
@@ -30,5 +32,34 @@ const createDeck = () => {
   // })
 }
 
+const dealButtonClickEvent = () => {
+  // deal two cards out to the dealer
+  houseHand.push(deck.pop())
+  houseHand.push(deck.pop())
+  // go into the deck and retrieve to cards and remove from deck
+  // top two cards dealt out
+  // assign the dealer two cards
 
+  // deal two cards to player
+  playerHand.push(deck.pop())
+  playerHand.push(deck.pop())
+
+  // show the hand to the player
+  document.querySelector('#player-card1').innerHTML = playerHand[0]
+  document.querySelector('#player-card2').innerHTML = playerHand[1]
+}
+
+const hitButtonClickEvent = () => {
+  // player can now hit and draw another card or stand
+  // if the player hits, draw another card that it's displayed
+  let drawnCard = deck.pop()
+  const newLi = document.createElement('li')
+  newLi.textContent = drawnCard
+  document.querySelector('#player-hand').appendChild(newLi)
+  console.log(drawnCard)
+  playerHand.push(drawnCard)
+}
+
+document.querySelector('.hit-button').addEventListener('click', hitButtonClickEvent)
+document.querySelector('#deal-button').addEventListener('click', dealButtonClickEvent)
 document.addEventListener('DOMContentLoaded', createDeck)
