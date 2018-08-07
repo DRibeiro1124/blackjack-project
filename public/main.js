@@ -2,7 +2,7 @@ let deck = []
 let houseHand = []
 let playerHand = []
 let playerScore = 0
-let dealerScore = 0
+let houseScore = 0
 
 const createDeck = () => {
   // 1. create an array with suits
@@ -51,8 +51,10 @@ const dealButtonClickEvent = () => {
   document.querySelector('#player-card2').textContent = playerHand[1][0] + ' of ' + playerHand[1][2]
   document.querySelector('#house-card1').textContent = houseHand[0][0] + ' of ' + houseHand[0][2]
   playerScore += playerHand[0][1] + playerHand[1][1]
-  dealerScore += houseHand[0][1]
-  console.log(playerScore)
+  houseScore += houseHand[0][1]
+  // console.log(playerScore)
+  document.querySelector('.player-results').textContent = playerScore  
+  document.querySelector('.house-results').textContent = playerScore  
   // add the value of player hand
 }
 
@@ -67,7 +69,7 @@ const hitButtonClickEvent = () => {
   playerHand.push(drawnCard)
 }
 // add the value for the cards dealt
-document.querySelector('.player-results')
+
 document.querySelector('.hit-button').addEventListener('click', hitButtonClickEvent)
 document.querySelector('#deal-button').addEventListener('click', dealButtonClickEvent)
 document.addEventListener('DOMContentLoaded', createDeck)
